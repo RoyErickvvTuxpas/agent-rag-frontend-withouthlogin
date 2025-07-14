@@ -54,7 +54,8 @@ export default function Page() {
     <div className="h-full flex flex-col p-4">
       <header className="mb-4 flex justify-between items-center">
         <div>
-          <span className="font-medium">¡Hola, {session.user?.email}!</span>
+          <span className="text-lg">👤</span>
+          <span className="font-medium text-black">¡Hola, {session.user?.email}!</span>
         </div>
         <button
           onClick={() => signOut()}
@@ -68,7 +69,7 @@ export default function Page() {
         {chat.map((m, i) => (
           <div
             key={i}
-            className={`p-3 rounded max-w-[70%] ${
+            className={`p-3 rounded max-w-[70%] text-black ${
               m.de === 'usuario'
                 ? 'ml-auto bg-blue-100 text-right'
                 : 'mr-auto bg-gray-100'
@@ -76,12 +77,13 @@ export default function Page() {
           >
             {m.texto}
           </div>
+          
         ))}
       </div>
 
       <form onSubmit={enviar} className="mt-2 flex gap-2">
         <input
-          className="flex-1 rounded border px-3 py-2"
+          className="flex-1 rounded border px-3 py-2 text-blue-600"
           placeholder="Escribe tu mensaje…"
           value={msg}
           onChange={(e) => setMsg(e.target.value)}

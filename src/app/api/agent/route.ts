@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 
 export async function GET(request: NextRequest) {
   // recrea la URL de tu API remota usando los mismos parámetros
-  const url = `[api]?` +
+  const url = process.env.API +`?` +
     new URL(request.url).searchParams.toString();
 
   // forward
